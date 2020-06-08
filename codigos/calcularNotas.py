@@ -10,16 +10,18 @@ print('Período: {} '.format(periodo))
 print('Nome do professor: {} '.format(professor))
 print('Matéria: {} '.format(materia))
 print('x.x.x.x.x.x.x.x.x.x N O T A S x.x.x.x.x.x.x.x.x.x')
-nota = 1
+notas = []
 soma = 0
 cont = 1
 opcao = 'S'
 while opcao == 'S':
     nota = float(input('Entre com a {}.ª nota deste aluno: '.format(cont)))
+    notas.append(nota)
+    quant = len(notas)
+    soma += nota
     cont += 1
     opcao = str(input('Deseja informar outra nota? [S|N]')).upper()
-    soma = soma + nota
 else:
     pass
-print('A soma apurada do aluno {} foi {}'.format(nome, soma))
+print('A média das notas apuradas do aluno {} é {:.1f}'.format(nome,soma/quant))
 print('x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x')
