@@ -27,9 +27,17 @@ while opcao == 'S':
     notas.append(nota)
     quant = len(notas)
     soma += nota
+    media = soma / quant
     cont += 1
     opcao = str(input('Deseja informar outra nota? [S|N]')).upper()
 else:
     pass
-print('A média das notas apuradas do aluno {} é {:.1f}'.format(nome,soma/quant))
+
+if media >= 7:
+    print('A média das notas apuradas do aluno {} é {:.1f} - APROVADO'.format(nome,media))
+elif media >= 5 and media < 7:
+    print('A média das notas apuradas do aluno {} é {:.1f} - RECUPERAÇÃO'.format(nome,media))
+else:
+    print('A média das notas apuradas do aluno {} é {:.1f} - REPROVADO'.format(nome,media))    
+
 linha()
